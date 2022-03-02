@@ -1,0 +1,157 @@
+@import url('http://fonts.cdnfonts.com/css/roboto');
+html, body {
+    height: 100%;
+    margin: 0; padding: 0;
+}
+
+body {
+    background-color: rgb(236, 236, 236);
+    font-family: 'Roboto', sans-serif;
+}
+
+#searchbox {
+    flex: 1;
+    height: max-content;
+    min-height: 1em;
+    padding: .5em 1.5em;
+    border-radius: .8em;
+    background-color: #f6f6f6;
+    box-shadow: 0 .1em .1em rgba(0, 0, 0, 0.15);
+    transition: box-shadow .5s;
+    position: relative;
+    padding-right: 3em;
+    max-height: 50vh;
+    overflow: auto;
+}
+#searchbox:focus {
+    outline: 0px solid transparent;
+}
+#searchbox:hover, #searchbox:focus {
+    box-shadow: 0 .1em .5em rgba(0, 0, 0, 0.25);
+}
+#searchbox.empty::before {
+    content: "Write your request";
+    color: grey;
+    position: absolute;
+}
+#searchBtn {
+    width: 2em;
+    height: 2em;
+    position: absolute;
+    top: 0; bottom: 0; right: .5em;
+    cursor: pointer;
+    transform: scale(.75);
+    margin: auto;
+    --searchbtn-color: rgba(255, 166, 0, 0.5);
+}
+#searchBtn:hover {
+    --searchbtn-color: rgb(255, 166, 0);
+}
+#searchBtn:hover::before {
+    transform: scale(1.1);
+}
+#searchBtn::before {
+    content: '';
+    position: absolute;
+    display: block;
+    border-style: solid;
+    border-width: .3em;
+    border-color: var(--searchbtn-color);
+    border-radius: 50%;
+    width: 1.2em;
+    height: 1.2em;
+    top: 0;
+    left: 0;
+    transition: all .5s;
+}
+#searchBtn::after {
+    content: '';
+    position: absolute;
+    display: block;
+    border: .15em var(--searchbtn-color) solid;
+    border-radius: .15em;
+    transform: rotate(45deg);
+    width: .3em;
+    height: 0;
+    top: 1.5em;
+    left: 1.2em;
+    transition: all .5s;
+}
+
+header {
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    position: sticky;
+    transition: all .5s;
+    padding: .5em 2em;
+    max-width: 700px;
+    width: 100%;
+}
+header > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    word-break: break-word;
+}
+header:not(.searching) {
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%);
+    left: 50%;
+    right: 50%;
+}
+.hidden {
+    visibility: hidden;
+    overflow: hidden;
+}
+
+#section {
+    padding:2em;
+    max-width: 700px;
+}
+
+.article {
+    padding: 1em;
+    background-color: #fff8;
+    margin-bottom: 2px;
+}
+.article details {
+    --details-color: rgba(255, 166, 0);
+}
+.article details[open], .article details:hover {
+    --details-color: rgb(202, 131, 0);
+}
+
+.article details h3 {
+    color: var(--details-color);
+    transition: color .5s;
+}
+
+.article .date {
+    color: grey;
+}
+
+details summary {
+    cursor: pointer;
+}
+details summary::-webkit-details-marker, details summary::marker {
+    display: none;
+    content: none;
+}
+
+.error {
+    background-color: rgb(206, 134, 134)!important;
+}
+
+.load-more {
+    text-align: center;
+    cursor: pointer;
+    background-color: #f1f1f1;
+    color: gray;
+}
+.load-more:hover {
+    background-color: #e6e6e6;
+}

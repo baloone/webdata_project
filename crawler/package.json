@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "puppeteer": "^13.0.1",
+    "readline": "^1.3.0"
+  }
+}

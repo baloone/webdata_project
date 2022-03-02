@@ -1,0 +1,1 @@
+{"id":"329786840_Packings","abstract":"Uλ(2, k, n, g). Further, 1. if λ(n−1)g ≡ 0 (mod k−1) and λn(n−1)g² ≡ −1 (mod k), then Dλ(2, k, n, g) ≤ Uλ(2, k, n, g)− 1; 2. if (n − 1)g ≡ 0 (mod k − 1) and n(n − 1)g² ≢ 0 (mod k), then D(2, k, n, g) ≤ U1(2, k, n, g)− 1.","authors":["D.R. Stinson","R. Wei","J. Yin"],"meta":["January 2006"],"references":[]}
