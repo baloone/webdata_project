@@ -64,16 +64,16 @@ const main = async () => {
         `));
         document.head.appendChild(style);
     });
-    await wait(500);
+    await wait(1500);
 
     const referencesBtn = await page.$(".references");
     await referencesBtn.click();
     await wait (500);
     let loadmore;
     try {
-    while (loadmore = await page.$("#references .publication-citations__load-more button")) {
+    while (loadmore = await page.$('.publication-citations__load-more:not(.lite-page-hidden) button')) {
         await loadmore.click();
-        await wait (500);
+        await wait (1500);
     }
     } catch (e) {};
 
